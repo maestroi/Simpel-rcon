@@ -46,7 +46,31 @@ function PlayerListController( $scope, rconService, $interval )
         $scope.Refresh();
     }
 
-	rconService.InstallService( $scope, $scope.Refresh )
+    $scope.BanPlayer = function ( id )
+    {
+        rconService.Command( 'banid ' + id );
+
+        $scope.Refresh();
+    }
+
+    $scope.BanPlayer = function ( id )
+    {
+        rconService.Command( 'ownerid ' + id );
+
+        $scope.Refresh();
+    }
+
+    $scope.BanPlayer = function ( id )
+    {
+        rconService.Command( 'moderatorid ' + id );
+
+        $scope.Refresh();
+    }
+
+
+
+
+    rconService.InstallService( $scope, $scope.Refresh )
 
 	// var timer = $interval( function ()
 	// {
