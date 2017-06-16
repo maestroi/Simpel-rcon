@@ -2,7 +2,7 @@
 This is based on Webrcon from Facepunch.
 
 # Demo
-[Demo RCON site](http://http://rcon.rustique.pro)
+[Demo RCON site](http://rcon.rustique.pro)
 I develope on this so this may change on the fly.
 
 # Installation
