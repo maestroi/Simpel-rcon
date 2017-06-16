@@ -1,6 +1,10 @@
 # Simpel-rcon
 This is based on Webrcon from Facepunch.
 
+# Demo
+[Demo RCON site](http://http://rcon.rustique.pro)
+I develope on this so this may change on the fly.
+
 # Installation
 1. login on your websever with SSH
 2. clone repo with: ```git clone https://github.com/maestroi/Simpel-rcon.git```
