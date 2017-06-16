@@ -1,4 +1,4 @@
-var app = angular.module('RconApp', ['ngRoute', 'nvd3']);
+var app = angular.module('RconApp', ['ngRoute', 'nvd3', 'angucomplete-alt']);
 
 app.service('rconService', [RconService]);
 
@@ -86,7 +86,7 @@ function RconController($scope, $rootScope, rconService, $timeout, $route) {
       rconService.Disconnect();
       $scope.Connected = false;
 
-      $scope.address = '#/home';
+      $scope.address = '#!/home';
     }
   }
 }

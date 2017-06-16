@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Websocket Rcon</title>
+    <title>Simple-Rcon</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.2/nv.d3.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="rcon.css" rel="stylesheet">
   </head>
   <body ng-controller="RconController">
@@ -22,7 +23,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="#">{{info.Hostname}}</a>
+          <a class="navbar-brand" href="#!">{{info.Hostname}}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse-header">
@@ -58,13 +59,16 @@
               </p>
             </li>
           </ul>
-
+          <ul class="nav navbar-nav">
+            <li ng-repeat="page in pages" ng-class="{'active' : $route.current.Title == page.Title }">
+              <a href="#!{{Nav( page.originalPath )}}">{{page.Title}}</a>
+            </li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
               <button class="btn btn-danger navbar-btn" type="button" ng-click="Disconnect()">Disconnect</button>
             </li>
           </ul>
-
         </div>
       </div>
     </nav>
@@ -73,17 +77,7 @@
 
       <div ng-include="'html/connect.html'" ng-show="!Connected"></div>
 
-      <div ng-show="Connected" class="col-sm-2 sidebar">
-
-        <ul class="nav nav-sidebar">
-          <li ng-repeat="page in pages" ng-class="{'active' : $route.current.Title == page.Title }">
-            <a href="#{{Nav( page.originalPath )}}">{{page.Title}}</a>
-          </li>
-        </ul>
-
-      </div>
-
-      <div class="col-sm-10" ng-show="Connected">
+      <div class="col-sm-12" ng-show="Connected">
 
         <h1 class="page-header">{{$route.current.Title}}</h1>
         <div class="row" ng-view></div>
@@ -93,13 +87,14 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
@@ -115,6 +110,7 @@
     <!-- Our stuff -->
     <script src="js/rconService.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/angucomplete-alt.js"></script>
     <script src="js/connection.js"></script>
     <script src="js/serverInfo.js"></script>
     <script src="js/console.js"></script>

@@ -46,21 +46,14 @@ function PlayerListController( $scope, rconService, $interval )
         $scope.Refresh();
     }
 
-    $scope.BanPlayer = function ( id )
-    {
-        rconService.Command( 'banid ' + id );
-
-        $scope.Refresh();
-    }
-
-    $scope.BanPlayer = function ( id )
+    $scope.OwnerPlayer = function ( id )
     {
         rconService.Command( 'ownerid ' + id );
 
         $scope.Refresh();
     }
 
-    $scope.BanPlayer = function ( id )
+    $scope.ModPlayer = function ( id )
     {
         rconService.Command( 'moderatorid ' + id );
 

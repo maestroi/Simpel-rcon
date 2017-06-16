@@ -39,7 +39,7 @@
 			<h2>Saved Connections</h2>
 			<ul ng-repeat="c in PreviousConnects | orderBy:array:true | limitTo:connectionsLimit">
 				<li>
-					<a ng-click="ConnectTo( c )" href="#/{{c.Address}}/info">{{c.Address}}</a> - {{c.date | date:'short'}}
+					<a ng-click="ConnectTo( c )" href="#!/{{c.Address}}/info">{{c.Address}}</a> - {{c.date | date:'short'}}
 				</li>
 			</ul>
 			<div ng-show="PreviousConnects.length > connectionsLimit || connectionsLimit === undefined">

@@ -2,22 +2,22 @@
 
 body
 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
   color: #cfd2da;
-  background-color: #252830;
+  background-color: #333;
 }
 
 a
 {
-	color: #1ca8dd;
+	color: #cfd2da;
 }
 
 a:hover
 {
-	color: #fff;
+	color: #252830;
 	text-decoration: none;
 }
 
@@ -31,6 +31,7 @@ a:hover
 	font-family: monospace;
     font-size: 12px;
 	white-space: pre-wrap;
+    color: lime;
 }
 
 .scrollable 
@@ -57,7 +58,7 @@ a:hover
 .nav-sidebar > .active > a:focus 
 {
   color: #fff;
-  background-color: #428bca;
+  background-color: #252830;
 }
 
 .fade 
@@ -81,19 +82,16 @@ a:hover
   overflow-y: visible !important;
 }
 
-.btn-default, .btn-default:active, .form-control
-{
-	background: rgba( 255, 255, 255, 0.3 );
-	border: none;
-	color: #cfd2da;
-	text-shadow: none;
+.btn {
+    text-transform: uppercase;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0;
 }
 
-.btn-default:hover 
-{
-	background: #1ca8dd;
-	color: #fff;
-}
 
 .panel 
 {
@@ -111,22 +109,22 @@ a:hover
 
 .navbar-default
 {
-	background-color: #428bca;
+	background-color: #252830;
     background-image: none;
     border: none;
     border-radius: 0;
-    color: white;
+    color: #cfd2da;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover
 {
-    color: #fff;
+    color: #cfd2da;
 }
 
 .navbar-default .navbar-nav > li > .navbar-text,
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
 {
-    color: #fff;
+    color: #cfd2da;
 }
 
 .navbar-default .navbar-nav > li > a:hover
@@ -148,4 +146,73 @@ a:hover
     display: block;
     padding: 15px;
 	line-height: 20px;
+}
+
+
+.angucomplete-holder {
+    position: relative;
+}
+
+.angucomplete-dropdown {
+    border-color: #ececec;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    width: 250px;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 9999;
+    position: absolute;
+    /*top: 32px;
+    left: 0px;
+    */
+    margin-top: -6px;
+    background-color: #ffffff;
+}
+
+.angucomplete-searching {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.angucomplete-description {
+    font-size: 14px;
+}
+
+.angucomplete-row {
+    padding: 5px;
+    color: #000000;
+    margin-bottom: 4px;
+
+}
+
+.angucomplete-selected-row, .angucomplete-row:hover {
+    background-color: lightblue;
+    color: #ffffff;
+}
+
+.angucomplete-image-holder {
+    padding-top: 2px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.angucomplete-image {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border-color: #ececec;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.angucomplete-image-default {
+    /* Add your own default image here
+     background-image: url('/assets/default.png');
+    */
+    background-position: center;
+    background-size: contain;
+    height: 34px;
+    width: 34px;
 }

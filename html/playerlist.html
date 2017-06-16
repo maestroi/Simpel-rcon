@@ -25,7 +25,7 @@
 							<th class="text-right" ng-click="Order( 'ConnectedSeconds' )" ng-class="SortClass( 'ConnectedSeconds' )">Duration</th>
 						</tr>
 					</thead>
-					<tr ng-repeat="line in Players | orderBy: OrderBy | filter:FilterText" href="#/{{address}}/player/{{line.SteamID}}/">
+					<tr ng-repeat="line in Players | orderBy: OrderBy | filter:FilterText" href="#!/{{address}}/player/{{line.SteamID}}/">
 
 						<td>
 							<div class="btn-group">
@@ -42,20 +42,38 @@
 								    <li class="divider"></li>
 								    <li>
 								    	<a href ng-click="KickPlayer(line.SteamID)">
-								    		<span class="glyphicon glyphicon-trash"></span>
+								    		<span class="glyphicon glyphicon-exclamation-sign"></span>
 								    		Kick
 								    	</a>
 								    </li>
+									<li>
+										<a href ng-click="BanPlayer(line.SteamID)">
+											<span class="glyphicon glyphicon-trash"></span>
+											Ban
+										</a>
+									</li>
+									<li>
+										<a href ng-click="OwnerPlayer(line.SteamID)">
+											<span class="glyphicon glyphicon-queen"></span>
+											Owner
+										</a>
+									</li>
+									<li>
+										<a href ng-click="ModPlayer(line.SteamID)">
+											<span class="glyphicon glyphicon-king"></span>
+											Mod
+										</a>
+									</li>
 								</ul>
 							</div>
 						</td>
 
 						<td>
-							<a href="#/{{address}}/player/{{line.SteamID}}/">{{line.DisplayName}}</a>
+							<a href="#!/{{address}}/player/{{line.SteamID}}/">{{line.DisplayName}}</a>
 						</td>
 
 						<td style="text-align: right">
-							<a href="#/{{address}}/player/{{line.SteamID}}/">{{line.SteamID}}</a>
+							<a href="#!/{{address}}/player/{{line.SteamID}}/">{{line.SteamID}}</a>
 						</td>
 
 						<td class="text-right" ng-class="{fade: line.VoiationLevel == 0 }">
@@ -80,5 +98,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>
