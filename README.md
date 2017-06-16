@@ -7,7 +7,7 @@ This is based on Webrcon from Facepunch.
 3. Navigate to your domain http://example.com
 
 # Rust server settings
-Your rust server must have rcon.web 1
+Your rust server must have ```rcon.web 1```
 
 # Features extra
 1. Other layout 
