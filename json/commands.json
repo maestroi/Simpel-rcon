@@ -1,6 +1,7 @@
 {"data":
   [
-    {"name": "Afghanistan", "code": "AF"},
-    {"name": "Aland Islands", "code": "AX"}
+    {"name": "oxide.reload", "code": "OR"},
+    {"name": "oxide.load", "code": "OL"},
+    {"name": "oxide.unload", "code": "OU"}
   ]
 }

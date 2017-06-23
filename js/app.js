@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
 
 app.controller('RconController', RconController);
 
-function RconController($scope, $rootScope, rconService, $timeout, $route) {
+function RconController($scope, $rootScope, rconService, $timeout, $route,$http) {
   $scope.$route = $route;
 
   $scope.pages = $.map($route.routes, function(value, index) {
@@ -89,6 +89,20 @@ function RconController($scope, $rootScope, rconService, $timeout, $route) {
       $scope.address = '#!/home';
     }
   }
+
+    $scope.countries = [
+        {name: 'Afghanistan', code: 'AF'},
+        {name: 'Aland Islands', code: 'AX'},
+        {name: 'Albania', code: 'AL'},
+        {name: 'Algeria', code: 'DZ'},
+        {name: 'American Samoa', code: 'AS'}
+    ];
+    $http.get('json/commands.json')
+        .then(function(res){
+            $scope.commands = res.data;
+            console.log(res.data)
+        });
+
 }
 
 app.filter('SecondsToDuration', [SecondsToDuration]);
