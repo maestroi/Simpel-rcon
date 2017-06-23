@@ -1,4 +1,4 @@
-var app = angular.module('RconApp', ['ngRoute', 'nvd3', 'angucomplete-alt']);
+var app = angular.module('RconApp', ['ngRoute', 'nvd3', 'angucomplete-alt', 'angularjs-gauge']);
 
 app.service('rconService', [RconService]);
 
