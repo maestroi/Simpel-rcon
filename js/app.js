@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
 
 app.controller('RconController', RconController);
 
-function RconController($scope, $rootScope, rconService, $timeout, $route,$http) {
+function RconController($scope, $rootScope, rconService, $timeout, $route, $http) {
   $scope.$route = $route;
 
   $scope.pages = $.map($route.routes, function(value, index) {
@@ -90,16 +90,29 @@ function RconController($scope, $rootScope, rconService, $timeout, $route,$http)
     }
   }
 
-    $scope.countries = [
-        {name: 'Afghanistan', code: 'AF'},
-        {name: 'Aland Islands', code: 'AX'},
-        {name: 'Albania', code: 'AL'},
-        {name: 'Algeria', code: 'DZ'},
-        {name: 'American Samoa', code: 'AS'}
-    ];
-    $http.get('json/commands.json')
+    $scope.commands = [
+        {name: 'oxide.load', code: 'OL'},
+        {name: 'oxide.reload', code: 'OR'},
+        {name: 'oxide.unload', code: 'OU'},
+        {name: 'ban', code: 'BN'},
+        {name: 'banid', code: 'BI'},
+        {name: 'banlist', code: 'BL'},
+        {name: 'banlistex', code: 'BX'},
+        {name: 'kick', code: 'KK'},
+        {name: 'kickall', code: 'KA'},
+        {name: 'listid', code: 'LI'},
+        {name: 'moderatorid ', code: 'MI'},
+        {name: 'ownerid', code: 'OI'},
+        {name: 'removemoderator', code: 'RM'},
+        {name: 'removeowner', code: 'RO'},
+        {name: 'unban', code: 'UB'},
+        {name: 'writecfg', code: 'WC'},
+        {name: 'version', code: 'vs'},
+        {name: 'say', code: 'SY'}
+    ]; //todo add more commands
+    $http.get('json/commands.json') //unused todo make it work
         .then(function(res){
-            $scope.commands = res.data;
+            $scope.countries = res.data;
             console.log(res.data)
         });
 

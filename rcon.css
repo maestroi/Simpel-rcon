@@ -2,12 +2,12 @@
 
 body
 {
-  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
-  color: #cfd2da;
-  background-color: #333;
+  color: #eeeeee;
+  background-color: #171717;
 }
 
 a
@@ -28,8 +28,8 @@ a:hover
 
 #ConsoleController .Output
 {
-	font-family: monospace;
-    font-size: 12px;
+	font-family: "Roboto", sans-serif;
+    font-size: 14px;
 	white-space: pre-wrap;
     color: white;
 }
@@ -84,7 +84,7 @@ a:hover
 
 .btn {
     text-transform: uppercase;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -109,7 +109,7 @@ a:hover
 
 .navbar-default
 {
-	background-color: #252830;
+	background-color: #2C3E50;
     background-image: none;
     border: none;
     border-radius: 0;
@@ -215,4 +215,8 @@ a:hover
     background-size: contain;
     height: 34px;
     width: 34px;
+}
+
+.page-header {
+    margin-left: -20px;
 }

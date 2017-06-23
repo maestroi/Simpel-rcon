@@ -1,23 +1,26 @@
 <div ng-controller="ConsoleController" id="ConsoleController">
 
     <div style="height: 600px" class="Output scrollable">
-    	<div ng-repeat="line in Output" ng-class="line.Class">{{(line.Time * 1000) | date:'shortTime'}}: {{line.Message}}</div>
+    	<div ng-repeat="line in Output" ng-class="line.Class">{{(line.Time * 100) | date:'shortTime'}}: {{line.Message}}</div>
     </div>
 
 	<form ng-submit="SubmitCommand()">
-		<input type="text" class="form-control" ng-model="Command" ng-keyup="KeyUp($event)" />
-
+		<div angucomplete-alt id="ex1"
+			 placeholder="Search commands"
+			 maxlength="50"
+			 pause="100"
+			 selected-object="selectedCountry"
+			 local-data="commands"
+			 search-fields="name"
+			 title-field="name"
+			 minlength="1"
+			 input-class="form-control form-control-small"
+			 ng-model="Command"
+			 match-class="highlight"></div>
 	</form>
-</div>
 
-<div angucomplete-alt id="ex1"
-	 placeholder="Search commands"
-	 maxlength="50"
-	 pause="100"
-	 selected-object="selectedCountry"
-	 local-data="commands"
-	 search-fields="name"
-	 title-field="name"
-	 minlength="1"
-	 input-class="form-control form-control-small"
-	 match-class="highlight"></div>
+	<form ng-submit="SubmitCommand()">
+		<input type="text" class="form-control" ng-model="Command" ng-keyup="KeyUp($event)" />
+	</form>
+
+</div>

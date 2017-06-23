@@ -53,7 +53,7 @@ function ConsoleController( $scope, rconService, $timeout )
 	$scope.SubmitCommand = function ()
 	{
 		$scope.OnMessage( { Message: $scope.Command, Type: 'Command' } );
-
+        console.log(onmessage)
 		$scope.commandHistory.push($scope.Command);
 
 		rconService.Command( $scope.Command, 1 );

@@ -60,6 +60,26 @@ function PlayerListController( $scope, rconService, $interval )
         $scope.Refresh();
     }
 
+    $scope.RemoveMod = function ( id )
+    {
+        rconService.Command( 'removemoderator ' + id );
+
+        $scope.Refresh();
+    }
+
+    $scope.RemoveOwner = function ( id )
+    {
+        rconService.Command( 'removeowner ' + id );
+
+        $scope.Refresh();
+    }
+
+    $scope.unban = function ( id )
+    {
+        rconService.Command( 'unban ' + id );
+
+        $scope.Refresh();
+    }
 
 
 

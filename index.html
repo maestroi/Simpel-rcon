@@ -58,15 +58,15 @@
                 {{info.EntityCount|number}}
               </p>
             </li>
+            <li>
+              <p class="navbar-text" title="Entity Count">
+                <button class="btn btn-xs btn-danger" type="button" ng-click="Disconnect()"><span class="glyphicon glyphicon-log-in"></span> Disconnect</a></button>
+              </p>
+            </li>
           </ul>
           <ul class="nav navbar-nav">
             <li ng-repeat="page in pages" ng-class="{'active' : $route.current.Title == page.Title }">
               <a href="#!{{Nav( page.originalPath )}}">{{page.Title}}</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <button class="btn btn-danger navbar-btn" type="button" ng-click="Disconnect()">Disconnect</button>
             </li>
           </ul>
         </div>
